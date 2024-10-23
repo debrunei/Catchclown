@@ -34,7 +34,7 @@ score_text = font.render("Score: " + str(score), True, YELLOW)
 score_rect = score_text.get_rect()
 score_rect.topright = (Window_Width - 50, 10)
 
-lives_text = font.render("Lives: ", str(player_live), True, YELLOW)
+lives_text = font.render("Lives: ", int(player_live), True, YELLOW)
 lives_rect = lives_text.get_rect()
 lives_rect.topright = (Window_Width - 50, 50)
 
@@ -121,12 +121,12 @@ while running:
                     running = False
 
 
-    display_surface.blit(title_text, title_rect)
-    display_surface.blit(score_text, score_rect)
-    display_surface.blit(lives_text, lives_rect)
 
+    display_surface.blit(background_image, background_rect)
     display_surface.blit(clown_image, clown_rect)
-
+    display_surface.blit(score_text, score_rect)
+    display_surface.blit(title_text, title_rect)
+    display_surface.blit(lives_text, lives_rect)
     pygame.display.update()
     clock.tick(FPS)
 
