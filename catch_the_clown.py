@@ -95,6 +95,9 @@ while running:
     if clown_rect.bottom >= Window_Height or clown_rect.top <= 0:
         clown_dy = -clown_dy
 
+    score_text = font.render("Score: " + str(score), True, YELLOW)
+    lives_text = font.render("Live: " + str(player_live), True, YELLOW)
+
     if player_live == 0:
         display_surface.blit(game_over_text, game_over_rect)
         display_surface.blit(continue_text, continue_rect)
